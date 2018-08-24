@@ -1,4 +1,4 @@
-# Laravel Nova Color Field
+# Laravel Nova Badge Field
 
 Simple Laravel Nova Badge field.  It extends the `Select` field and allows a simple mapping of colors to values to display a "Badge" in the index.
 
