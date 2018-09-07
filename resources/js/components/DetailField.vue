@@ -1,9 +1,18 @@
 <template>
-    <panel-item :field="field" />
+    <panel-item :field="field">
+        <template slot="value">
+            <span class="rounded-full uppercase px-2 py-1 text-xs font-bold"
+                  :style="{ backgroundColor: backgroundColor(), color: textColor() }"
+            >{{ field.value }}</span>
+        </template>
+    </panel-item>
+
 </template>
 
 <script>
-export default {
-    props: ['resource', 'resourceName', 'resourceId', 'field'],
-}
+    import colors from '../mixins/colors';
+    export default {
+        props: ['resource', 'resourceName', 'resourceId', 'field'],
+        mixins: [colors]
+    }
 </script>
