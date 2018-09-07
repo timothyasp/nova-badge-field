@@ -20,6 +20,7 @@ composer require timothyasp/nova-badge-field
 
 ## Usage
 
+
 ```
 Badge::make('Field')
    ->options($options)
@@ -28,6 +29,20 @@ Badge::make('Field')
       'option2' => '#000000'
    ]);
 ```
+
+If you want to set the text color of the badge, set the color attribute on the option.  If there isn't an option set, it defaults to setting the background color and the text color is set to a contrasting white/black color based on the brightness of the background. 
+```
+Badge::make('Field')
+   ->options($options)
+   ->colors([
+      'option1' => [
+          'background' => '#ffffff',
+          'color' => '#000000'
+      ],
+      'option2' => '#000000'
+   ]);
+```
+
 
 ## Credits
 
