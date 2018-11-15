@@ -22,6 +22,8 @@ composer require timothyasp/nova-badge-field
 
 
 ```
+use Timothyasp\Badge\Badge;
+
 Badge::make('Field')
    ->options($options)
    ->colors([
@@ -32,6 +34,8 @@ Badge::make('Field')
 
 If you want to set the text color of the badge, set the color attribute on the option.  If there isn't an option set, it defaults to setting the background color and the text color is set to a contrasting white/black color based on the brightness of the background. 
 ```
+use Timothyasp\Badge\Badge;
+
 Badge::make('Field')
    ->options($options)
    ->colors([
