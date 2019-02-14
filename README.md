@@ -52,6 +52,8 @@ Badge::make('Field')
 
 - [Timothy Asp](https://github.com/timothyasp)
 
+Built for [QuizGriz - the #1 online trivia and quiz game site](https://grizly.com)
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
