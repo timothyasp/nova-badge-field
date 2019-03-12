@@ -3,7 +3,7 @@
         <template slot="value">
             <span class="rounded-full uppercase px-2 py-1 text-xs font-bold"
                   :style="{ backgroundColor: backgroundColor(), color: textColor() }"
-            >{{ field.value }}</span>
+            >{{ __(field.value) }}</span>
         </template>
     </panel-item>
 
