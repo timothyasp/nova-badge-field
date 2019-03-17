@@ -20,7 +20,7 @@
                 </option>
             </select>
 
-            <p v-if="hasError" class="my-2 text-danger">
+            <p v-if="hasError" class="help-text error-text mt-2 text-danger">
                 {{ firstError }}
             </p>
         </template>
