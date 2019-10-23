@@ -3,7 +3,7 @@
         <template slot="value">
             <span class="rounded-full uppercase px-2 py-1 text-xs font-bold"
                   :style="{ backgroundColor: backgroundColor(), color: textColor() }"
-            >{{ __(field.value) }}</span>
+            >{{ __(displayValue()) }}</span>
         </template>
     </panel-item>
 
@@ -11,8 +11,9 @@
 
 <script>
     import colors from '../mixins/colors';
+    import display from '../mixins/display';
     export default {
         props: ['resource', 'resourceName', 'resourceId', 'field'],
-        mixins: [colors]
+        mixins: [colors, display]
     }
 </script>
