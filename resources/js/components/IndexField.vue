@@ -1,5 +1,5 @@
 <template>
-    <span class="rounded-full uppercase px-2 py-1 text-xs font-bold"
+    <span class="rounded-full uppercase px-2 py-1 text-xs font-bold whitespace-no-wrap"
           :style="{ backgroundColor: backgroundColor(), color: textColor() }"
     >{{ __(displayValue()) }}</span>
 </template>
