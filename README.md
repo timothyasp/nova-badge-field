@@ -24,6 +24,11 @@ composer require timothyasp/nova-badge-field
 ```
 use Timothyasp\Badge\Badge;
 
+$options = [
+    'option1' => 'Option 1',
+    'option2' => 'Option 2'
+];
+
 Badge::make('Field')
    ->options($options)
    ->colors([
@@ -33,8 +38,14 @@ Badge::make('Field')
 ```
 
 If you want to set the text color of the badge, set the color attribute on the option.  If there isn't an option set, it defaults to setting the background color and the text color is set to a contrasting white/black color based on the brightness of the background. 
+
 ```
 use Timothyasp\Badge\Badge;
+
+$options = [
+    'option1' => 'Option 1',
+    'option2' => 'Option 2'
+];
 
 Badge::make('Field')
    ->options($options)
@@ -47,10 +58,32 @@ Badge::make('Field')
    ]);
 ```
 
+If you prefer to use the `label` on the index and detail pages, you can use the `->displayUsingLabels()` option.
+
+```
+use Timothyasp\Badge\Badge;
+
+$options = [
+  'option1' => 'Option 1',
+  'option2' => 'Option 2'
+];
+
+Badge::make('Field')
+   ->options($options)
+   ->colors([
+      'option1' => '#ffffff',
+      'option2' => '#000000'
+   ])->displayUsingLabels();
+```
+
+
 
 ## Credits
 
 - [Timothy Asp](https://github.com/timothyasp)
+- [@timcv](https://github.com/timcv)
+- [@batFormat](https://github.com/batFormat)
+- [@ShaneShipston](https://github.com/ShaneShipston)
 
 Built for [QuizGriz - the #1 online trivia and quiz game site](https://grizly.com)
 
