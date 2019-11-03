@@ -23,4 +23,11 @@ class Badge extends Select
     {
         return $this->withMeta(['colorMap' => $map]);
     }
+
+    public function displayUsingLabels()
+    {
+        $this->withMeta(['useLabel' => true]);
+
+        return $this;
+    }
 }
