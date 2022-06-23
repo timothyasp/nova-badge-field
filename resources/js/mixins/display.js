@@ -1,4 +1,13 @@
 export default {
+    computed: {
+        badgeExtraClasses: function() {
+            if (!this.field.extraClasses) {
+                return {foo: false};
+            }
+
+            return {[this.field.extraClasses]: true};
+        }
+    },
     methods: {
         displayValue: function () {
             if (this.field.useLabel) {
