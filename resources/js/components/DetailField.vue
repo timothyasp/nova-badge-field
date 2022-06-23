@@ -1,19 +1,18 @@
 <template>
-    <panel-item :field="field">
-        <template slot="value">
+    <PanelItem :index="index" :field="field" :field-name="field.name">
+        <template #value>
             <span class="rounded-full uppercase px-2 py-1 text-xs font-bold whitespace-no-wrap"
                   :style="{ backgroundColor: backgroundColor(), color: textColor() }"
             >{{ __(displayValue()) }}</span>
         </template>
-    </panel-item>
-
+    </PanelItem>
 </template>
 
 <script>
     import colors from '../mixins/colors';
     import display from '../mixins/display';
     export default {
-        props: ['resource', 'resourceName', 'resourceId', 'field'],
+        props: ['index', 'resource', 'resourceName', 'resourceId', 'field'],
         mixins: [colors, display]
     }
 </script>

@@ -30,4 +30,5 @@ class Badge extends Select
 
         return $this;
     }
+
 }

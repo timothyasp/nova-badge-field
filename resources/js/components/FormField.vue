@@ -1,30 +1,34 @@
 <template>
-    <default-field :field="field">
-        <template slot="field">
-            <select
-                    :id="field.name"
-                    v-model="value"
-                    class="w-full form-control form-select"
-                    :class="errorClasses"
+    <DefaultField :field="currentField" :errors="errors" :show-help-text="showHelpText">
+        <template #field>
+            <SelectControl
+                :id="field.attribute"
+                :dusk="field.attribute"
+                v-model:selected="value"
+                @change="handleChange"
+                class="w-full"
+                :select-classes="{ 'form-input-border-error': hasError }"
+                :options="currentField.options"
+                :disabled="currentlyIsReadonly"
             >
                 <option value="" selected disabled>
                     {{__('Choose an option')}}
                 </option>
 
                 <option
-                        v-for="option in field.options"
+                        v-for="option in currentField.options"
                         :value="option.value"
                         :selected="option.value == value"
                 >
                     {{ option.label }}
                 </option>
-            </select>
+            </SelectControl>
 
             <p v-if="hasError" class="help-text error-text mt-2 text-danger">
                 {{ firstError }}
             </p>
         </template>
-    </default-field>
+    </DefaultField>
 </template>
 
 <script>
@@ -32,8 +36,16 @@
 
     export default {
         mixins: [HandlesValidationErrors, FormField],
+        props: ['resourceName', 'resourceId', 'field'],
 
         methods: {
+            /*
+             * Set the initial, internal value for the field.
+             */
+            setInitialValue() {
+                this.value = this.field.value || ''
+            },
+
             /**
              * Provide a function that fills a passed FormData object with the
              * field's internal value attribute. Here we are forcing there to be a
